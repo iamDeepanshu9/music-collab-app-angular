@@ -1,215 +1,102 @@
+/* General body styling */
+body {
+  margin: 0 auto;
+  padding: 0;
+  background: #f5f5f5; /* Light grey background for softer look */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Redesign of the login box */
 .login-box {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
+  top: calc(50% - 200px);
+  left:  calc(50% - 200px);;
+  padding: 30px;
+  width: 350px;
+  background: #ffffff; /* White background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  color: #333; /* Darker text for better readability */
 }
 
 .login-box h2 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #fff;
+  margin-bottom: 30px;
+  color: #333;
   text-align: center;
 }
 
-.login-box .user-box {
+/* User input box enhancements */
+.user-box {
+  width: 90%;
   position: relative;
+  margin-bottom: 20px;
 }
 
-.login-box .user-box input {
+.user-box input {
   width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+  border: 2px solid #ddd; /* Light border */
+  border-radius: 4px;
+  background: #f9f9f9; /* Very light grey to distinguish input area */
 }
-.login-box .user-box label {
+
+.user-box label {
   position: absolute;
-  top:0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: .5s;
+  top: 12px;
+  left: 12px;
+  padding: 0;
+  font-size: 14px;
+  color: #bbb; /* Light color for label */
+  transition: 0.3s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-  top: -20px;
-  left: 0;
-  color: #03e9f4;
-  font-size: 12px;
+.user-box input:focus,
+.user-box input:valid {
+  border-color: #0088cc; /* Highlight input with a blue border */
 }
 
-.login-box div a {
-  position: relative;
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  top: -10px;
+  background: #ffffff;
+  padding: 0 5px;
+  font-size: 10px;
+  color: #0088cc; /* Blue label for focus and filled state */
+}
+
+/* Button redesign */
+a {
   display: inline-block;
   padding: 10px 20px;
-  color: #03e9f4;
+  color: #ffffff;
+  background-color: #0088cc; /* Consistent blue theme for button */
   font-size: 16px;
   text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
+  border-radius: 4px;
+  transition: 0.3s;
 }
 
-.login-box a:hover {
-  background: #03e9f4;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 100px #03e9f4;
+a:hover {
+  background-color: #005f99; /* Darker blue on hover */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.login-box a span {
-  position: absolute;
-  display: block;
-}
-
-.login-box a span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
-  animation: btn-anim1 1s linear infinite;
-}
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,100% {
-    left: 100%;
-  }
-}
-
-.login-box a span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
-  animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,100% {
-    top: 100%;
-  }
-}
-
-.login-box a span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
-  animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,100% {
-    right: 100%;
-  }
-}
-
-.login-box a span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
-  animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
-}
-
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,100% {
-    bottom: 100%;
-  }
-}
-
-.new-user{
-  color: white;
-  cursor: pointer;
-  padding: 4px;
-  margin-top: 10px;
-}
-
-.toggle-container {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.toggle-input {
+/* Remove animations from button */
+a span {
   display: none;
 }
 
-.toggle-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  border-radius: 34px;
-  transition: 0.4s;
-}
-
-.toggle-slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  border-radius: 50%;
-  transition: 0.4s;
-}
-
-.toggle-input:checked + .toggle-slider {
-  background-color: #2196F3;
-}
-
-.toggle-input:checked + .toggle-slider:before {
-  transform: translateX(26px);
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px  #444  inset !important; /* change white to match your form's background */
-    -webkit-text-fill-color: white !important; /* change color as needed */
+/* Styling for new user registration link */
+.new-user {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  color: #0088cc; /* Consistent blue theme for clickable links */
+  font-size: 14px;
 }
