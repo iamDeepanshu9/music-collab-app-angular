@@ -1,0 +1,39 @@
+<div class="container">
+    <div *ngIf="user$ | async as user" class="user-profile">
+        <img [src]=" 'assets/profile.jpg'" alt="Profile Image" class="profile-image">
+        <h2>{{ user.username }}</h2>
+        <p>{{ user.email }}</p>
+        <p>{{ user.bio }}</p>
+      
+        <!-- Musical Roles -->
+        <mat-chip-list>
+          <mat-chip *ngFor="let role of user.roles" color="primary" selected>{{ role }}</mat-chip>
+        </mat-chip-list>
+      
+        <!-- Genres -->
+        <mat-chip-list>
+          <mat-chip *ngFor="let genre of user.genres" color="accent" selected>{{ genre }}</mat-chip>
+        </mat-chip-list>
+      
+        <!-- Instruments -->
+        <mat-chip-list>
+          <mat-chip *ngFor="let instrument of user.instruments" color="warn" selected>{{ instrument }}</mat-chip>
+        </mat-chip-list>
+      
+        <!-- SoundCloud Link -->
+        <a *ngIf="user.soundCloudLink" href="{{ user.soundCloudLink }}" target="_blank">Listen to My Music</a>
+      
+        <!-- <button mat-button (click)="editProfile()">Edit Profile</button> -->
+      </div>
+      
+      <!-- Edit Form - could be more sophisticated with dynamic form fields -->
+      <div *ngIf="editing" class="edit-profile">
+        <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+          <!-- Additional form fields for roles, genres, instruments, link -->
+          <!-- Omitted for brevity, but you would use similar inputs or select fields with multi-select options -->
+          <button mat-button type="submit">Save</button>
+          <button mat-button (click)="editing=false">Cancel</button>
+        </form>
+      </div>
+      
+</div>

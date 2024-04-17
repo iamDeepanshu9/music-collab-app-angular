@@ -1,0 +1,43 @@
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 176, 188, 0.912) !important;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-align: center; 
+  cursor: pointer;
+  padding-left: 10px; /* Adjust as needed */
+}
+
+.logo-container :hover {
+  color: red; /* Adjust as needed */
+}
+
+.logo-container img {
+  max-height: 100px; /* Adjust as needed */
+}
+
+.navigation-links {
+  display: flex;
+  align-items: center;
+  padding-right: 10px; /* Adjust as needed */
+  justify-content: end;
+}
+
+.navigation-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.navigation-links a :hover{
+  color: red;
+}
+
+.custom-toolbar{
+  display: flex;
+  justify-content: space-between;
+}

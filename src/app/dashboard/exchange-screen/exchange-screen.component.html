@@ -1,0 +1,56 @@
+<div class="container">
+  <!-- Ongoing Projects -->
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>Ongoing Projects</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let project of projects">
+          {{ project.name }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button>See all</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- New Invitations -->
+  <div *ngFor="let invitation of invitations">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>New Invitations</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Invited by {{ invitation.from }} to collaborate on "{{
+            invitation.song
+          }}"
+        </p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button color="primary" (click)="handleAccept(invitation)">
+          Accept
+        </button>
+        <button mat-button color="warn" (click)="handleDecline(invitation)">
+          Decline
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- Recent Updates -->
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>Recent Updates</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let update of updates">
+          {{ update.message }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
